@@ -15,7 +15,7 @@
 #define HANDLE_H
 
 #include "point.h"
-#include "upoint.h"
+#include "usecount.h"
 
 class Handle {
 public:
@@ -29,14 +29,14 @@ public:
 
     int x()const;
     Handle& x(int);
-    
+
 
     int y()const;
     Handle& y(int);
+    
 private:
-    void makeSingleUPoint();
-    //
-    UPoint * up;
+    Point* p;
+    UseCount u;
 };
 
 
