@@ -24,6 +24,8 @@ class Int_node : public Expr_node {
     Int_node(int k) : n(k){}
     
     void print(ostream& o) const {o << n;}
+    virtual int eval() const {return n;}
+
 };
 
 

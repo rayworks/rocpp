@@ -33,6 +33,7 @@ protected:
     };
 
     virtual void print(ostream&) const = 0;
+    virtual int eval() const = 0;
 };
 
 #endif /* EXPR_NODE_H */

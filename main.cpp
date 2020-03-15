@@ -25,45 +25,45 @@ void testByteOrder() {
     unsigned long x;
     unsigned char *p;
     int i;
-    
+
     x = 0x11223344;
     p = (unsigned char *) &x;
-    for( i = 0; i < sizeof(long); i++) {
+    for (i = 0; i < sizeof (long); i++) {
         printf("%x ", *p++);
     }
     printf("\n");
-   
+
 }
 
 void printExp() {
     Expr t = Expr("*", Expr("-", 5), Expr("+", 3, 4));
-    cout<< t << endl;
+    cout << t << " = " << t.eval() << endl;
     t = Expr("*", t, t);
-    cout<< t << endl;
+    cout << t << " = " << t.eval() << endl;
 }
 
 int main(int argc, char** argv) {
     Trace tc(stdout);
     tc.on();
-   
-    tc.print((char*)string("begin main()\n").c_str());
-    
+
+    tc.print((char*) string("begin main()\n").c_str());
+
     Test s;
     Test t(s);
     s = t;
-    
+
     //testByteOrder(); // little-endian : 44 33 22 11 00 00 00 00
-    
-    Handle h(3,4);
+
+    Handle h(3, 4);
     Handle h2 = h;
-    
+
     h2.x(5);
     int n = h2.x();
     printf(">>>Handle x result : %d\n", n);
-    
+
     printExp();
-    
-    tc.print((char*)string("end main()\n").c_str()); 
+
+    tc.print((char*) string("end main()\n").c_str());
     return 0;
 }
 

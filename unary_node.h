@@ -28,6 +28,8 @@ class Unary_node : public Expr_node {
     void print(ostream& o) const {
         o << "(" << op << opnd << ")";
     };
+
+    virtual int eval() const;
 };
 
 

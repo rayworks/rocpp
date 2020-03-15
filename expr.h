@@ -39,6 +39,8 @@ public:
         if (--p->use == 0)
             delete p;
     };
+   
+    int eval() const {return p->eval();}
 };
 
 

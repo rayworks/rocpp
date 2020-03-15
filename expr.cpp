@@ -5,7 +5,7 @@
  */
 
 #include "expr.h"
-#include "Int_node.h"
+#include "int_node.h"
 #include "unary_node.h"
 #include "binary_node.h"
 

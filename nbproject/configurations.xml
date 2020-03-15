@@ -37,7 +37,7 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="Int_node.h" ex="false" tool="3" flavor2="0">
+      <item path="binary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="binary_node.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -51,6 +51,8 @@
       </item>
       <item path="handle.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="int_node.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="point.h" ex="false" tool="3" flavor2="0">
@@ -60,6 +62,8 @@
       <item path="test.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="trace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="unary_node.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -90,7 +94,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Int_node.h" ex="false" tool="3" flavor2="0">
+      <item path="binary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="binary_node.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -104,6 +108,8 @@
       </item>
       <item path="handle.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="int_node.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="point.h" ex="false" tool="3" flavor2="0">
@@ -113,6 +119,8 @@
       <item path="test.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="trace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="unary_node.h" ex="false" tool="3" flavor2="0">
       </item>

@@ -30,6 +30,10 @@ class Binary_node : public Expr_node {
     void print(ostream& o) const {
         o << "(" << left << op << right << ")";
     };
+    
+
+    virtual int eval() const;
+
 
 };
 
