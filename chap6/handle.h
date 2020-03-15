@@ -15,7 +15,7 @@
 #define HANDLE_H
 
 #include "point.h"
-#include "usecount.h"
+#include "../chap7/usecount.h"
 
 class Handle {
 public:

@@ -8,6 +8,7 @@
 #include "int_node.h"
 #include "unary_node.h"
 #include "binary_node.h"
+#include "ternary_node.h"
 
 Expr::Expr(int n) {
     p = new Int_node(n);
@@ -19,6 +20,10 @@ Expr::Expr(const string& op, Expr t) {
 
 Expr::Expr(const string& op, Expr left, Expr right) {
     p = new Binary_node(op, left, right);
+}
+
+Expr::Expr(const string& op, Expr left, Expr middle, Expr right) {
+    p = new Ternary_node(op, left, middle, right);
 }
 
 Expr& Expr::operator =(const Expr& rhs) {

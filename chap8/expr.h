@@ -28,6 +28,7 @@ public:
     Expr(int);
     Expr(const string&, Expr);
     Expr(const string&, Expr, Expr);
+    Expr(const string&, Expr, Expr, Expr);
 
     Expr(const Expr& t) {
         p = t.p;

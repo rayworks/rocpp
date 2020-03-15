@@ -14,10 +14,10 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "test.h"
-#include "trace.h"
-#include "handle.h"
-#include "expr.h"
+#include "chap32/test.h"
+#include "chap0/trace.h"
+#include "chap6/handle.h"
+#include "chap8/expr.h"
 
 using namespace std;
 
@@ -39,6 +39,9 @@ void printExp() {
     Expr t = Expr("*", Expr("-", 5), Expr("+", 3, 4));
     cout << t << " = " << t.eval() << endl;
     t = Expr("*", t, t);
+    cout << t << " = " << t.eval() << endl;
+
+    t = Expr("*", Expr(0), Expr("+", 3, 4), Expr("*", 6, 7));
     cout << t << " = " << t.eval() << endl;
 }
 
