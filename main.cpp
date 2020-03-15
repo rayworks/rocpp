@@ -12,10 +12,12 @@
  */
 
 #include <cstdlib>
+#include <iostream>
 
 #include "test.h"
 #include "trace.h"
 #include "handle.h"
+#include "expr.h"
 
 using namespace std;
 
@@ -31,6 +33,13 @@ void testByteOrder() {
     }
     printf("\n");
    
+}
+
+void printExp() {
+    Expr t = Expr("*", Expr("-", 5), Expr("+", 3, 4));
+    cout<< t << endl;
+    t = Expr("*", t, t);
+    cout<< t << endl;
 }
 
 int main(int argc, char** argv) {
@@ -51,6 +60,8 @@ int main(int argc, char** argv) {
     h2.x(5);
     int n = h2.x();
     printf(">>>Handle x result : %d\n", n);
+    
+    printExp();
     
     tc.print((char*)string("end main()\n").c_str()); 
     return 0;
