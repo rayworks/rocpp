@@ -16,8 +16,6 @@
 
 #include "picture2.h"
 
-class Picture2;
-
 class P_Node {
     friend class Picture2;
 
@@ -55,7 +53,6 @@ class String_Pic : public P_Node {
 };
 
 class Frame_Pic : public P_Node {
-    //friend class Picture2;
     friend Picture2 frame2(const Picture2& p);
 
 public:
@@ -78,7 +75,6 @@ class VCat_Pic : public P_Node {
 };
 
 class HCat_Pic : public P_Node {
-    friend class Picture2;
     friend Picture2 operator|(const Picture2& l, const Picture2& r);
     HCat_Pic(const Picture2& l, const Picture2& r);
     int height() const;

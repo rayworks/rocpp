@@ -15,15 +15,15 @@
 #define PICTURE2_H
 #include <iostream>
 
-#include "p_node.h"
-
 using namespace std;
+
+// class forward declaration
 class P_Node;
 
 class Picture2 {
     friend ostream& operator<<(ostream&, const Picture2&);
 
-    friend Picture2 frame(const Picture2& p);
+    friend Picture2 frame2(const Picture2& p);
     friend Picture2 operator&(const Picture2&, const Picture2&);
     friend Picture2 operator|(const Picture2&, const Picture2&);
     
@@ -39,7 +39,6 @@ public:
 
     Picture2& operator=(const Picture2&);
     
-//    Picture2(const Ptr<P_Node>&);
     Picture2(P_Node* );
     
 private:
@@ -47,7 +46,6 @@ private:
     int height() const;
     int width() const;
     void display(ostream&, int, int) const;
-    //Ptr<P_Node> p;
     P_Node* p;
 };
 

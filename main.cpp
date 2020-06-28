@@ -71,15 +71,16 @@ int main(int argc, char** argv) {
     printf(">>>Handle x result : %d\n", n);
 
     printExp();
-    
-//    Picture p(init, 3);         
-//    cout<< p << endl;
-//    Picture q = frame(p);
-//    cout<< frame(q & (p | q)) << endl;
-    
+
+    //    Picture p(init, 3);         
+    //    cout<< p << endl;
+    //    Picture q = frame(p);
+    //    cout<< frame(q & (p | q)) << endl;
+
     Picture2 pct2(init, 3);
-    cout<< frame(pct2) << endl;
-    
+    Picture2 framed = frame2(pct2);
+    cout << frame2(framed & (pct2 | framed)) << endl;
+
 
     tc.print((char*) string("end main()\n").c_str());
     return 0;

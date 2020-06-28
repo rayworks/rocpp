@@ -6,7 +6,6 @@
 #include <string.h>
 
 #include "p_node.h"
-#include "ptr.h"
 
 P_Node::P_Node() : use(1) {
 }
@@ -59,7 +58,7 @@ Frame_Pic::Frame_Pic(const Picture2& t) : p(t) {
 }
 
 Picture2 frame2(const Picture2& pic) {
-    return Picture2(new Frame_Pic(pic));
+    return new Frame_Pic(pic); //  Picture2()
 }
 
 int Frame_Pic::height() const {
@@ -105,9 +104,9 @@ void VCat_Pic::display(std::ostream& os, int row, int wd) const {
     if (row >= 0 && row < top.height()) {
         top.display(os, row, wd);
     } else if (row < top.height() + bottom.height()) {
-        bottom.display(os, row, wd);
+        bottom.display(os, row - top.height(), wd);
     } else {
-        pad(os, row, wd);
+        pad(os, 0, wd);
     }
 }
 
