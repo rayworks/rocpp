@@ -9,7 +9,11 @@
       <itemPath>chap8/expr_node.h</itemPath>
       <itemPath>chap6/handle.h</itemPath>
       <itemPath>chap8/int_node.h</itemPath>
+      <itemPath>chap10/p_node.h</itemPath>
+      <itemPath>chap9/picture.h</itemPath>
+      <itemPath>chap10/picture2.h</itemPath>
       <itemPath>chap6/point.h</itemPath>
+      <itemPath>chap10/ptr.h</itemPath>
       <itemPath>chap8/ternary_node.h</itemPath>
       <itemPath>chap32/test.h</itemPath>
       <itemPath>chap0/trace.h</itemPath>
@@ -28,6 +32,9 @@
       <itemPath>chap8/expr.cpp</itemPath>
       <itemPath>chap6/handle.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>chap10/p_node.cpp</itemPath>
+      <itemPath>chap9/picture.cpp</itemPath>
+      <itemPath>chap10/picture2.cpp</itemPath>
       <itemPath>chap8/ternary_node.cpp</itemPath>
       <itemPath>chap32/test.cpp</itemPath>
       <itemPath>chap8/unary_node.cpp</itemPath>
@@ -48,8 +55,21 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <ccTool>
+          <standard>8</standard>
+        </ccTool>
       </compileType>
       <item path="chap0/trace.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap10/p_node.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap10/p_node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap10/picture2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap10/picture2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap10/ptr.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chap32/test.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -86,6 +106,10 @@
       <item path="chap8/unary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="chap8/unary_node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap9/picture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap9/picture.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -112,6 +136,16 @@
       </compileType>
       <item path="chap0/trace.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="chap10/p_node.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap10/p_node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap10/picture2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap10/picture2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap10/ptr.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="chap32/test.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="chap32/test.h" ex="false" tool="3" flavor2="0">
@@ -147,6 +181,10 @@
       <item path="chap8/unary_node.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="chap8/unary_node.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap9/picture.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="chap9/picture.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

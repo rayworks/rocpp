@@ -19,6 +19,10 @@
 #include "chap6/handle.h"
 #include "chap8/expr.h"
 
+//#include "chap9/picture.h"
+#include "chap10/picture2.h"
+#include "chap10/p_node.h"
+
 using namespace std;
 
 void testByteOrder() {
@@ -45,6 +49,8 @@ void printExp() {
     cout << t << " = " << t.eval() << endl;
 }
 
+char* init[] = {"Paris", "in the", "Spring"};
+
 int main(int argc, char** argv) {
     Trace tc(stdout);
     tc.on();
@@ -65,6 +71,15 @@ int main(int argc, char** argv) {
     printf(">>>Handle x result : %d\n", n);
 
     printExp();
+    
+//    Picture p(init, 3);         
+//    cout<< p << endl;
+//    Picture q = frame(p);
+//    cout<< frame(q & (p | q)) << endl;
+    
+    Picture2 pct2(init, 3);
+    cout<< frame(pct2) << endl;
+    
 
     tc.print((char*) string("end main()\n").c_str());
     return 0;
