@@ -57,3 +57,7 @@ ostream& operator<<(ostream& os, const Picture2& picture) {
     return os;
 
 }
+
+Picture2 reframe(const Picture2& pic, char corner, char side, char top) {
+    return pic.p -> reframe(corner, side, top);
+}

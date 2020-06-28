@@ -76,10 +76,13 @@ int main(int argc, char** argv) {
     //    cout<< p << endl;
     //    Picture q = frame(p);
     //    cout<< frame(q & (p | q)) << endl;
-
+    
     Picture2 pct2(init, 3);
     Picture2 framed = frame2(pct2);
-    cout << frame2(framed & (pct2 | framed)) << endl;
+    Picture2 composite = frame2(framed & (pct2 | framed));
+    cout << composite << endl;
+
+    cout << reframe(composite, '*', '*', '*') << endl;
 
 
     tc.print((char*) string("end main()\n").c_str());

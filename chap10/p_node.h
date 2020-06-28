@@ -18,8 +18,16 @@
 
 class P_Node {
     friend class Picture2;
+    
+    // Picture2's friend function 'reframe' marked as 'friend'
+    friend Picture2 reframe(const Picture2& pic, char, char, char);
+    
+    virtual Picture2 reframe(char, char, char) = 0;
 
 public:
+    // The utility function to make it compile
+    static Picture2 reframe(const Picture2& pic, char, char, char);
+    
     virtual ~P_Node();
 protected:
     P_Node();
@@ -36,7 +44,7 @@ protected:
             os << " ";
         }
     }
-private:
+//private:
     int use;
 };
 
@@ -47,6 +55,8 @@ class String_Pic : public P_Node {
     int height() const;
     int width() const;
     void display(std::ostream&, int, int) const;
+    Picture2 reframe(char, char, char);
+
 
     char **data;
     int size;
@@ -54,14 +64,20 @@ class String_Pic : public P_Node {
 
 class Frame_Pic : public P_Node {
     friend Picture2 frame2(const Picture2& p);
+    
 
 public:
-    Frame_Pic(const Picture2& t);
+    Frame_Pic(const Picture2& t, char = '+', char = '|', char = '-');
 
     int height() const;
     int width() const;
     void display(std::ostream&, int, int) const;
+    Picture2 reframe(char, char, char);
+    
     Picture2 p;
+    char corner;
+    char sideborder;
+    char topborder;
 };
 
 class VCat_Pic : public P_Node {
@@ -71,6 +87,7 @@ class VCat_Pic : public P_Node {
     int width() const;
 
     void display(std::ostream&, int, int) const;
+    Picture2 reframe(char, char, char);
     Picture2 top, bottom;
 };
 
@@ -81,6 +98,7 @@ class HCat_Pic : public P_Node {
     int width() const;
 
     void display(std::ostream&, int, int) const;
+    Picture2 reframe(char, char, char);
     Picture2 left, right;
 };
 #endif /* P_NODE_H */

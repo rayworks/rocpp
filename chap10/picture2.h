@@ -24,9 +24,13 @@ class Picture2 {
     friend ostream& operator<<(ostream&, const Picture2&);
 
     friend Picture2 frame2(const Picture2& p);
+    
+    friend Picture2 reframe(const Picture2& pic, char, char, char);
+    
     friend Picture2 operator&(const Picture2&, const Picture2&);
     friend Picture2 operator|(const Picture2&, const Picture2&);
     
+    friend class P_Node;
     friend class String_Pic;
     friend class Frame_Pic;
     friend class HCat_Pic;

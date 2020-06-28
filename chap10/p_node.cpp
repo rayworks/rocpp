@@ -6,6 +6,7 @@
 #include <string.h>
 
 #include "p_node.h"
+#include "picture2.h"
 
 P_Node::P_Node() : use(1) {
 }
@@ -54,7 +55,13 @@ void String_Pic::display(std::ostream& os, int row, int width) const {
     pad(os, start, width);
 }
 
-Frame_Pic::Frame_Pic(const Picture2& t) : p(t) {
+Picture2 String_Pic::reframe(char c, char s, char t) {
+    use++;
+    return this; // private ctor
+}
+
+Frame_Pic::Frame_Pic(const Picture2& pt, char c, char s, char t) : p(pt),
+corner(c), sideborder(s), topborder(t) {
 }
 
 Picture2 frame2(const Picture2& pic) {
@@ -69,21 +76,25 @@ int Frame_Pic::width() const {
     return p.width() + 2;
 }
 
+Picture2 Frame_Pic::reframe(char c, char s, char t) {
+    return new Frame_Pic(P_Node::reframe(p, c, s, t), c, s, t);
+}
+
 void Frame_Pic::display(std::ostream& os, int row, int wd) const {
     if (row < 0 || row >= height()) { // out of boundary
         pad(os, 0, wd);
     } else {
         if (row == 0 || row == height() - 1) {
             // top | bottom
-            os << "+";
+            os << corner; //"+";
             int i = p.width();
             while (--i >= 0)
-                os << "-";
-            os << "+";
+                os << topborder; //"-";
+            os << corner;
         } else {// internal
-            os << "|";
+            os << sideborder;
             p.display(os, row - 1, p.width());
-            os << "|";
+            os << sideborder;
         }
         pad(os, width(), wd);
     }
@@ -98,6 +109,11 @@ int VCat_Pic::height() const {
 
 int VCat_Pic::width() const {
     return max(top.width(), bottom.width());
+}
+
+Picture2 VCat_Pic::reframe(char c, char s, char t) {
+    return new VCat_Pic(P_Node::reframe(top, c, s, t),
+            P_Node::reframe(bottom, c, s, t));
 }
 
 void VCat_Pic::display(std::ostream& os, int row, int wd) const {
@@ -125,6 +141,10 @@ int HCat_Pic::width() const {
     return left.width() + right.width();
 }
 
+Picture2 HCat_Pic::reframe(char c, char s, char t) {
+    return new HCat_Pic(P_Node::reframe(left, c, s, t), P_Node::reframe(right, c, s, t));
+}
+
 void HCat_Pic::display(std::ostream& os, int row, int wd) const {
     left.display(os, row, left.width());
     right.display(os, row, right.width());
@@ -133,4 +153,8 @@ void HCat_Pic::display(std::ostream& os, int row, int wd) const {
 
 Picture2 operator|(const Picture2& l, const Picture2& r) {
     return Picture2(new HCat_Pic(l, r));
+}
+
+Picture2 P_Node::reframe(const Picture2& pic, char corner, char side, char top) {
+    return pic.p -> reframe(corner, side, top);
 }
