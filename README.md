@@ -1,6 +1,6 @@
 # rocpp
 
-The executable code of the book ['Ruminations on C++'](https://www.amazon.com/Ruminations-Decade-Programming-Insight-Experience/dp/0201423391/).
+The executable code of the book ['Ruminations on C++'](https://www.informit.com/store/ruminations-on-c-plus-plus-a-decade-of-programming-9780201423396).
 
 * [Chap0 Prelude](./chap0/)
 * [Chap6 Handles: Part 1](./chap6/)
@@ -8,7 +8,7 @@ The executable code of the book ['Ruminations on C++'](https://www.amazon.com/Ru
 * [Chap8 An Object-Oriented Program](./chap8/)
 * [Chap9 Analysis of a Classroom Exercise: Part 1](./chap9/)
 * [Chap10 Analysis of a Classroom Exercise: Part 2](./chap10/)
-* Chap12 Designing a Container Class
+* [Chap12 Designing a Container Class](./chap12/)
 * Chap13 Accessing Container Elements
 * Chap14 Iterators
 * Chap15 Sequences

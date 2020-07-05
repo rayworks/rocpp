@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="100">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>chap12/array.h</itemPath>
       <itemPath>chap8/binary_node.h</itemPath>
       <itemPath>chap8/expr.h</itemPath>
       <itemPath>chap8/expr_node.h</itemPath>
@@ -70,6 +71,8 @@
       <item path="chap10/picture2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chap10/ptr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap12/array.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chap32/test.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -145,6 +148,8 @@
       <item path="chap10/picture2.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chap10/ptr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="chap12/array.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="chap32/test.cpp" ex="false" tool="1" flavor2="0">
       </item>

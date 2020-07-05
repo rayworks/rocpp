@@ -23,6 +23,8 @@
 #include "chap10/picture2.h"
 #include "chap10/p_node.h"
 
+#include "chap12/array.h"
+
 using namespace std;
 
 void testByteOrder() {
@@ -83,6 +85,16 @@ int main(int argc, char** argv) {
     cout << composite << endl;
 
     cout << reframe(composite, '*', '*', '*') << endl;
+
+    int i;
+    Array<int> ai(10);
+    for (i = 0; i < 10; i++)
+        ai.operator[](i) = i;
+
+    for (i = 0; i < 10; i++)
+        cout << ai.operator[](i) << " ";
+    cout << endl;
+    cout << "0 1 2 3 4 5 6 7 8 9 " << endl;
 
 
     tc.print((char*) string("end main()\n").c_str());
