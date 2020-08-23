@@ -14,6 +14,7 @@ The executable code of the book ['Ruminations on C++'](https://www.informit.com/
 * Chap15 Sequences
 * Chap16 Templates as Interfaces
 * Chap19 Using Generic Iterators
+* [Chap21 Function Objects](./chap21)
 * Chap24 An Object Lesson in Library-Interface Design
 * Chap25 Library Design is Language Design
 * Chap27 Classes that Keep Track of Themselves

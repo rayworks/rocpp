@@ -13,6 +13,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <vector>
 
 #include "chap32/test.h"
 #include "chap0/trace.h"
@@ -24,6 +25,7 @@
 #include "chap10/p_node.h"
 
 #include "chap12/array.h"
+#include "chap21/comp_base.h"
 
 using namespace std;
 
@@ -53,6 +55,18 @@ void printExp() {
 
 char* init[] = {"Paris", "in the", "Spring"};
 
+int f(int i) {
+    return i;
+};
+
+int g(int j) {
+    return j + 1;
+};
+
+int func_h(int k) {
+    return k * 2;
+};
+
 int main(int argc, char** argv) {
     Trace tc(stdout);
     tc.on();
@@ -78,7 +92,7 @@ int main(int argc, char** argv) {
     //    cout<< p << endl;
     //    Picture q = frame(p);
     //    cout<< frame(q & (p | q)) << endl;
-    
+
     Picture2 pct2(init, 3);
     Picture2 framed = frame2(pct2);
     Picture2 composite = frame2(framed & (pct2 | framed));
@@ -96,6 +110,22 @@ int main(int argc, char** argv) {
     cout << endl;
     cout << "0 1 2 3 4 5 6 7 8 9 " << endl;
 
+  
+    // NB: C++ function object
+    Composition<int, int> fg(f, g);
+    Composition<int, int> gh(g, func_h);
+    Composition<int, int> fgh(fg, g);
+    int merged = gh.operator ()(2);
+    int combResult = fgh.operator ()(1);
+    cout << "Merged : " << merged << ",  " << "comb result : " << combResult << endl;
+
+    // However lambda expression has been introduced into the language since C++11
+    vector<int> v {4, 1, 3, 5, 2, 3, 1, 7};
+    vector<int>:: iterator p = find_if(v.begin(), v.end(), [](int i) 
+    { 
+        return i > 4; 
+    }); 
+    cout << "First number greater than 4 is : " << *p << endl; 
 
     tc.print((char*) string("end main()\n").c_str());
     return 0;
